@@ -110,34 +110,6 @@ app.post('/plants/:id/statistics', (req, res) => {
     }
 });
 
-app.get('/plants', (req, res) => {
-    const databasePath = path.resolve('xml-content', 'database', 'database.xml');
-    const xmlDoc = libxmljs.parseXml(fs.readFileSync(databasePath, 'utf-8'));
-
-    console.log(xmlDoc.toString())
-    const plants = xmlDoc.find('//plant').map(p => {
-        const idNode = p.get('id');
-        const nameNode = p.get('name');
-        const typeNode = p.get('type');
-        const statusNode = p.get('status');
-        const statisticsNodes = p.find('statistics/price');
-
-        console.log(idNode.text())
-
-        return {
-            id: idNode ? idNode.text() : null,
-            name: nameNode ? nameNode.text() : null,
-            type: typeNode ? typeNode.text() : null,
-            status: statusNode ? statusNode.text() : null,
-            statistics: statisticsNodes.map(price => ({
-                date: price.attr('date') ? price.attr('date').value() : null,
-                price: price.text()
-            }))
-        };
-    });
-    res.json(plants);
-});
-
 app.put('/plants/:id/status', (req, res) => {
     const plantId = req.params.id;
     const newStatus = req.body.status;
