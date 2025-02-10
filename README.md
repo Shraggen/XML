@@ -10,13 +10,16 @@ Es soll eine Plattform erschaffen werden, welche die Konzerne sowie die Verbrauc
 Wir erstellen die Plattform mit der kostengünstigen Variante XML. Die Plattform soll mit folgenden Features den Konzernen sowie Verbrauchern in der laufenden Energiekrise helfen und Klarheit verschaffen.
 
 ### Feature 1 - CRUD API
-Die CRUD API
+Mithilfe der CRUD API kann der Benutzer Kraftwerke und Preise hinzufügen und bearbeiten.
 
-- Verwaltung von Kraftwerken und Preisen
-- Datenvalidierung durch XSD: Kein fehlerhafter Input möglich
-- Dynamische Anzeige der Daten in HTML
-- XSLT-Transformation für Abfragen:
-    - Sortierung nach Preis, Standort, oder Kraftwerkstyp
+#### Create
+Um Daten hinzuzufügen, lädt der Benutzer eine XML Datei hoch, welche von der Applikation gegen ein XSD Schema geprüft wird. So wird sichergestellt, dass keine fehlerhaften Inputs möglich sind.
+
+#### Read
+Die Daten können auf der Plattform dynamisch angezeigt werden. Mithilfe einer XSLT-Transformation sind Filterungen oder Sortierungen nach Preis möglich.
+
+#### Update / Delete
+Das Bearbeiten oder Löschen von Daten wurde bewusst nicht implementiert. Dadurch dass die Daten immutable sind wird eine maximale Transparenz der Energiepreise erzielt.
 
 ### Feature 2 - Visualisierung
 Mögliche Optionen:
@@ -31,13 +34,13 @@ Umsetzung mit XSLT und SVG
 Die Daten zu den Kraftwerken sowie Preisen werden in XML gelagert (database.xml).
 
 ### Datenvalidierung
-XSD (Stellt sicher, dass Daten korrekt sind)
+Die Datenvalidierung ist mit XSD umgesetzt. Sobald der Benutzer ein XML hochlädt, wird dieses gegen ein XSD Schema geprüft. So wird sichergestellt, dass die hochgeladenen Daten im korrekten Format sind.
 
 ### Datenverarbeitung und Präsentation
 XSLT & JavaScript
 
 ### Visualisierung
-SVG für Diagramm
+Um die XML Daten zu visualisieren, wird ein SVG Diagramm generiert.
 
 ### Webserver
 Node.js und Express
