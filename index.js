@@ -67,7 +67,6 @@ app.post('/plants', (req, res) => {
     const plant = energiePlant.node('plant');
     plant.node('id', newId);
     plant.node('name', newPlant.name);
-    plant.node('type', newPlant.type);
     plant.node('status', newPlant.status); // Default status
     plant.node('statistics');
 
