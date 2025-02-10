@@ -53,6 +53,7 @@ app.post('/updateData', (req, res) => {
     res.sendStatus(200)
 })
 
+//Done and tested with Feature 7
 app.post('/plants', (req, res) => {
     const newPlant = req.body;
     const databasePath = path.resolve('xml-content', 'database', 'database.xml');
