@@ -6,9 +6,25 @@ Durch den aktuellen Gas- und Strommangel steigen die Energiepreise ins Unermessl
 ## Lösungsidee
 Es soll eine Plattform erschaffen werden, welche die Konzerne sowie die Verbraucher mit nützlichen Features während der Energiekrise unterstützt. Die Plattform sollte auf bestehender Infrastruktur und möglichst kostengünstig implementiert werden.
 
-## 
-Wir entwickeln eine 
-TODO
+## Lösung
+Wir erstellen die Plattform mit der kostengünstigen Variante XML. Die Plattform soll mit folgenden Features den Konzernen sowie Verbrauchern in der laufenden Energiekrise helfen und Klarheit verschaffen.
+
+### Feature 1 - CRUD API
+Die CRUD API
+
+- Verwaltung von Kraftwerken und Preisen
+- Datenvalidierung durch XSD: Kein fehlerhafter Input möglich
+- Dynamische Anzeige der Daten in HTML
+- XSLT-Transformation für Abfragen:
+    - Sortierung nach Preis, Standort, oder Kraftwerkstyp
+
+### Feature 2 - Visualisierung
+Mögliche Optionen:
+- Liniendiagramm für Preisentwicklung über Zeit
+- Kreisdiagramm für Energietyp-Verteilung
+- Geografische Preisverteilung als Heatmap
+
+Umsetzung mit XSLT und SVG
 
 ## Technische Architektur
 ### Datenhaltung
