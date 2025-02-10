@@ -19,7 +19,9 @@
     <xs:element name="plant">
         <xs:complexType>
             <xs:sequence>
+                <xs:element name="id" type="xs:integer"/>
                 <xs:element name="name" type="xs:string"/>
+                <xs:element name="status" type="xs:boolean"/>
                 <xs:element ref="statistics"/>
             </xs:sequence>
         </xs:complexType>
