@@ -7,12 +7,12 @@
         <index>0</index>
     </item>
     <item>
-        <text>Feature 5</text>
+        <text>Read Kraftwerke</text>
         <link>feature-05.xml</link>
         <index>5</index>
     </item>
     <item>
-        <text>Read Kraftwerke</text>
+        <text>Diagram</text>
         <link>feature-06.xml</link>
         <index>6</index>
     </item>
