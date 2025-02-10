@@ -7,37 +7,17 @@
         <index>0</index>
     </item>
     <item>
-        <text>Feature 1: cross-document XSLT</text>
-        <link>feature-01.xml</link>
-        <index>1</index>
-    </item>
-    <item>
-        <text>Feature 2: data-driven SVG</text>
-        <link>feature-02.xml</link>
-        <index>2</index>
-    </item>
-    <item>
-        <text>Feature 3: FO and PDF</text>
-        <link>feature-03.xml</link>
-        <index>3</index>
-    </item>
-    <item>
-        <text>Feature 4: add user input to data (using XPATH and XSD)</text>
-        <link>feature-04.xml</link>
-        <index>4</index>
-    </item>
-    <item>
         <text>Feature 5</text>
         <link>feature-05.xml</link>
         <index>5</index>
     </item>
     <item>
-        <text>Feature 6</text>
+        <text>Read Kraftwerke</text>
         <link>feature-06.xml</link>
         <index>6</index>
     </item>
     <item>
-        <text>Feature 7</text>
+        <text>Create Kraftwerk</text>
         <link>feature-07.xml</link>
         <index>7</index>
     </item>
