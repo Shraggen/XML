@@ -30,9 +30,21 @@
     <xs:element name="statistics">
         <xs:complexType>
             <xs:sequence>
-                <xs:element ref="price" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="price" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="xs:decimal">
+                                <xs:attribute name="date" type="xs:date" use="required"/>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
             </xs:sequence>
         </xs:complexType>
+        <xs:unique name="unique-statistics-per-day">
+            <xs:selector xpath="price"/>
+            <xs:field xpath="@date"/>
+        </xs:unique>
     </xs:element>
 
     <xs:element name="price">

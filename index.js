@@ -46,50 +46,52 @@ app.post('/plants', (req, res) => {
     }
 });
 
-app.post('/plants/:id/statistics', (req, res) => {
-    const plantId = req.params.id;
-    const newStat = req.body;
+app.post('/plants/statistics', (req, res) => {
+    const { plantId, date, price } = req.body;
+
+    if (!plantId || !date || !price) {
+        return res.status(400).send("Missing required fields: plantId, date, or price.");
+    }
+
     const databasePath = path.resolve('xml-content', 'database', 'database.xml');
     const xmlDoc = libxmljs.parseXml(fs.readFileSync(databasePath, 'utf-8'));
     const plant = xmlDoc.get(`//plant[id="${plantId}"]`);
 
-    if (plant) {
-        const stats = plant.get('statistics');
-        stats.node('price', newStat.price).attr('date', newStat.date);
+    if (!plant) {
+        return res.status(404).send('Plant not found');
+    }
 
-        // Validate and save
-        if (validateDatabase(xmlDoc)) {
-            fs.writeFileSync(databasePath, xmlDoc.toString());
-            res.sendStatus(201);
-        } else {
-            res.status(400).send('Invalid XML');
-        }
+    const stats = plant.get('statistics');
+    const existingPrices = stats.find('price');
+
+    // Get the most recent date in the statistics
+    const latestDate = existingPrices.length > 0
+        ? existingPrices[existingPrices.length - 1].attr('date').value()
+        : null;
+
+    // Validate: New statistics must be after the latest recorded date
+    if (latestDate && new Date(date) <= new Date(latestDate)) {
+        return res.status(400).send('New statistic must be newer than the latest one.');
+    }
+
+    // Ensure no duplicate date exists
+    const dateExists = existingPrices.some(p => p.attr('date').value() === date);
+    if (dateExists) {
+        return res.status(400).send('A statistic for this date already exists.');
+    }
+
+    // Append new price
+    stats.node('price', price).attr('date', date);
+
+    // Validate against XSD before saving
+    if (validateDatabase(xmlDoc)) {
+        fs.writeFileSync(databasePath, xmlDoc.toString());
+        res.sendStatus(201);
     } else {
-        res.status(404).send('Plant not found');
+        res.status(400).send('Invalid XML');
     }
 });
 
-app.put('/plants/:id/status', (req, res) => {
-    const plantId = req.params.id;
-    const newStatus = req.body.status;
-    const databasePath = path.resolve('xml-content', 'database', 'database.xml');
-    const xmlDoc = libxmljs.parseXml(fs.readFileSync(databasePath, 'utf-8'));
-    const plant = xmlDoc.get(`//plant[id="${plantId}"]`);
-
-    if (plant) {
-        plant.get('status').text(newStatus);
-
-        // Validate and save
-        if (validateDatabase(xmlDoc)) {
-            fs.writeFileSync(databasePath, xmlDoc.toString());
-            res.sendStatus(200);
-        } else {
-            res.status(400).send('Invalid XML');
-        }
-    } else {
-        res.status(404).send('Plant not found');
-    }
-});
 
 function validateDatabase(xmlDocDatabase) {
     const databaseXsd = fs.readFileSync(path.resolve('xml-content', 'database', 'database.xsd'), 'utf-8')
