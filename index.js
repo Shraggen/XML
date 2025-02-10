@@ -92,6 +92,57 @@ app.post('/plants/statistics', (req, res) => {
     }
 });
 
+app.get('/plants', (req, res) => {
+    const { filterBy = "all", sortBy = "id", sortOrder = "asc" } = req.query;
+    const databasePath = path.resolve('xml-content', 'database', 'database.xml');
+    const xmlDoc = libxmljs.parseXml(fs.readFileSync(databasePath, 'utf-8'));
+
+    let plants = xmlDoc.find('//plant');
+
+    // Filter by status
+    if (filterBy === "true" || filterBy === "false") {
+        plants = plants.filter(p => p.get('status').text() === filterBy);
+    }
+
+    // Sort function
+    const compare = (a, b) => {
+        let valueA, valueB;
+
+        switch (sortBy) {
+            case "name":
+                valueA = a.get('name').text();
+                valueB = b.get('name').text();
+                return valueA.localeCompare(valueB);
+            case "price":
+                valueA = parseFloat(a.get('statistics/price[last()]')?.text() || "0");
+                valueB = parseFloat(b.get('statistics/price[last()]')?.text() || "0");
+                return valueA - valueB;
+            default: // Sort by id
+                valueA = parseInt(a.get('id').text(), 10);
+                valueB = parseInt(b.get('id').text(), 10);
+                return valueA - valueB;
+        }
+    };
+
+    // Apply sorting
+    plants.sort(compare);
+    if (sortOrder === "desc") plants.reverse();
+
+    // Create XML response
+    let responseXml = `<?xml version="1.0" encoding="UTF-8"?>\n<plants>`;
+    plants.forEach(plant => {
+        responseXml += `<plant>
+            <id>${plant.get('id').text()}</id>
+            <name>${plant.get('name').text()}</name>
+            <status>${plant.get('status').text()}</status>
+            <price>${plant.get('statistics/price[last()]')?.text() || "N/A"}</price>
+        </plant>`;
+    });
+    responseXml += `</plants>`;
+
+    res.header("Content-Type", "application/xml");
+    res.send(responseXml);
+});
 
 function validateDatabase(xmlDocDatabase) {
     const databaseXsd = fs.readFileSync(path.resolve('xml-content', 'database', 'database.xsd'), 'utf-8')

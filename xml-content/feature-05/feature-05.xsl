@@ -1,84 +1,101 @@
 <?xml version="1.0" ?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns="http://www.w3.org/1999/xhtml">
-    
-    <xsl:param name="sortBy">price</xsl:param>
-    <xsl:param name="filterByStatus">all</xsl:param> <!-- 'active', 'inactive', 'all' -->
 
     <xsl:output method="html" indent="yes"/>
 
     <xsl:template match="/">
         <html>
             <head>
-                <title>Sorted Power Plants</title>
+                <title>Sortierte Kraftwerke</title>
                 <link rel="stylesheet" type="text/css" href="../theme.css"/>
                 <script>
-                    function applyFilter() {
-                        const statusFilter = document.getElementById("statusFilter").value;
-                        window.location.href = "?filterByStatus=" + statusFilter;
+                    function fetchPlants() {
+                    const filterBy = document.getElementById("statusFilter").value;
+                    const sortBy = document.getElementById("sortFilter").value;
+                    const sortOrder = document.getElementById("orderFilter").value;
+
+                    const url = `/plants?filterBy=${filterBy}&amp;sortBy=${sortBy}&amp;sortOrder=${sortOrder}`;
+
+                    const xhr = new XMLHttpRequest();
+                    xhr.open("GET", url, true);
+                    xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4 &amp;&amp; xhr.status === 200) {
+                    const xml = xhr.responseXML;
+                    if (!xml) {
+                    console.error("Fehler beim Parsen des XML");
+                    return;
+                    }
+
+                    const plantTable = document.getElementById("plantTable");
+                    plantTable.innerHTML = ""; // Leere vorherige Daten
+
+                    const plants = xml.getElementsByTagName("plant");
+                    for (let i = 0; i &lt; plants.length; i++) {
+                    const plant = plants[i];
+
+                    const id = plant.getElementsByTagName("id")[0].textContent;
+                    const name = plant.getElementsByTagName("name")[0].textContent;
+                    const status = plant.getElementsByTagName("status")[0].textContent;
+                    const price = plant.getElementsByTagName("price")[0]?.textContent || "N/A";
+
+                    // Neue Tabellenreihe erstellen (XSL-freundlich)
+                    const row = document.createElement("tr");
+                    row.innerHTML = "&lt;td&gt;" + id + "&lt;/td&gt;" +
+                    "&lt;td&gt;" + name + "&lt;/td&gt;" +
+                    "&lt;td&gt;" + price + " CHF&lt;/td&gt;" +
+                    "&lt;td&gt;" + (status === "true" ? "✅ Aktiv" : "❌ Inaktiv") + "&lt;/td&gt;";
+                    plantTable.appendChild(row);
+                    }
+                    }
+                    };
+                    xhr.send();
                     }
                 </script>
-            </head>
-            <body>
-                <h1>Sorted Power Plants</h1>
-                <small><a href="../index.xml">Home</a></small>
 
+            </head>
+            <body onload="fetchPlants()">
+                <h1>Sortierte Kraftwerke</h1>
+                <small><a href="../index.xml">Home</a></small>
                 <br/><br/>
 
-                <!-- Dropdown zur Filterung -->
-                <label for="statusFilter">Filter:</label>
-                <select id="statusFilter" onchange="applyFilter()">
-                    <option value="all">
-                        <xsl:if test="$filterByStatus='all'"><xsl:attribute name="selected"/></xsl:if> Alle
-                    </option>
-                    <option value="active">
-                        <xsl:if test="$filterByStatus='active'"><xsl:attribute name="selected"/></xsl:if> Nur aktive
-                    </option>
-                    <option value="inactive">
-                        <xsl:if test="$filterByStatus='inactive'"><xsl:attribute name="selected"/></xsl:if> Nur inaktive
-                    </option>
+                <label for="statusFilter">Status:</label>
+                <select id="statusFilter" onchange="fetchPlants()">
+                    <option value="all">Alle</option>
+                    <option value="true">Aktiv</option>
+                    <option value="false">Inaktiv</option>
+                </select>
+
+                <label for="sortFilter">Sortieren nach:</label>
+                <select id="sortFilter" onchange="fetchPlants()">
+                    <option value="id">ID</option>
+                    <option value="name">Name</option>
+                    <option value="price">Letzter Preis</option>
+                </select>
+
+                <label for="orderFilter">Reihenfolge:</label>
+                <select id="orderFilter" onchange="fetchPlants()">
+                    <option value="asc">Aufsteigend</option>
+                    <option value="desc">Absteigend</option>
                 </select>
 
                 <br/><br/>
 
+                <!-- Dynamically populated table -->
                 <table border="1">
-                    <tr>
-                        <th>Name</th>
-                        <th>Typ</th>
-                        <th>Ø Preis</th>
-                        <th>Status</th>
-                    </tr>
-
-                    <!-- Kraftwerke mit Filter und Sortierung -->
-                    <xsl:apply-templates select="energie-data/energie-plant/plant[
-                        ($filterByStatus='all') or 
-                        ($filterByStatus='active' and status='true') or 
-                        ($filterByStatus='inactive' and status='false')
-                    ]">
-                        <xsl:sort select="statistics/price[last()]" data-type="number" order="ascending"/>
-                    </xsl:apply-templates>
-
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Letzter Preis</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="plantTable">
+                        <!-- API Data will be inserted here -->
+                    </tbody>
                 </table>
             </body>
         </html>
     </xsl:template>
-
-    <xsl:template match="plant">
-        <tr>
-            <td><xsl:value-of select="name"/></td>
-            <td><xsl:value-of select="type"/></td>
-            <td>
-                <xsl:variable name="sum" select="sum(statistics/price)"/>
-                <xsl:variable name="count" select="count(statistics/price)"/>
-                <xsl:value-of select="format-number($sum div $count, '0.00')"/> CHF
-            </td>
-            <td>
-                <xsl:choose>
-                    <xsl:when test="status='true'">✅ Aktiv</xsl:when>
-                    <xsl:otherwise>❌ Inaktiv</xsl:otherwise>
-                </xsl:choose>
-            </td>
-        </tr>
-    </xsl:template>
-
 </xsl:stylesheet>
