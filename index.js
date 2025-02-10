@@ -65,10 +65,17 @@ app.post('/plants', (req, res) => {
 
     // Append new plant
     const plant = energiePlant.node('plant');
-    plant.node('id', newId);
+    plant.node('id', String(newId));
     plant.node('name', newPlant.name);
-    plant.node('status', newPlant.status); // Default status
-    plant.node('statistics');
+    plant.node('status', newPlant.status === "true" ? "true" : "false");
+
+    // Add statistics with initial price
+    const statistics = plant.node('statistics');
+    if (newPlant.price && newPlant.date) {
+        statistics.node('price', newPlant.price).attr('date', newPlant.date);
+    }
+
+    console.log(plant.toString())
 
     // Validate and save
     if (validateDatabase(xmlDoc)) {

@@ -29,16 +29,21 @@
     <item>
         <text>Feature 5</text>
         <link>feature-05.xml</link>
-        <index>4</index>
+        <index>5</index>
     </item>
     <item>
         <text>Feature 6</text>
         <link>feature-06.xml</link>
-        <index>4</index>
+        <index>6</index>
+    </item>
+    <item>
+        <text>Feature 7</text>
+        <link>feature-07.xml</link>
+        <index>7</index>
     </item>
     <item>
         <text>About</text>
         <link>about.xml</link>
-        <index>5</index>
+        <index>10</index>
     </item>
 </menu>
