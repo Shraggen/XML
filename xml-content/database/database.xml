@@ -10,7 +10,11 @@
                 <price date="2022-01-17">9.75</price>
                 <price date="2022-03-20">11.50</price>
                 <price date="2022-11-09">13.00</price>
-                <price date="2023-01-01">8.20</price>
+                <price date="2023-01-02">14.00</price>
+                <price date="2023-01-03">16.00</price>
+                <price date="2023-01-04">9.00</price>
+                <price date="2023-01-05">18.50</price>
+                <price date="2023-01-06">4.00</price>
             </statistics>
         </plant>
         <plant>
@@ -46,7 +50,6 @@
                 <price date="2022-01-17">9.75</price>
                 <price date="2022-03-20">11.50</price>
                 <price date="2022-11-09">13.00</price>
-                <price date="2023-01-01">8.20</price>
             </statistics>
         </plant>
         <plant>
@@ -58,8 +61,7 @@
                 <price date="2022-01-17">9.75</price>
                 <price date="2022-03-20">11.50</price>
                 <price date="2022-11-09">13.00</price>
-                <price date="2023-01-01">8.20</price>
-            </statistics>
+           </statistics>
         </plant>
     </energie-plant>
 </energie-data>

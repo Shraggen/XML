@@ -12,7 +12,7 @@
             <body>
                 <h1>Energiewerke Mittelland Reloaded - Preisentwicklung</h1>
                 <small><a href="../index.xml">Home</a></small>
-                    <div class="content">
+                <div class="content">
                     <svg:svg width="800" height="500">
                         <svg:line x1="50" y1="450" x2="750" y2="450" stroke="yellowgreen" stroke-width="2"/>
                         <svg:line x1="50" y1="50" x2="50" y2="450" stroke="yellowgreen" stroke-width="2"/>
@@ -23,7 +23,7 @@
                         <xsl:for-each select="document('../database/database.xml')/energie-data/energie-plant/plant[1]/statistics/price">
                             <xsl:variable name="x" select="50 + ((position() - 1) * 70)" />
                             <svg:text x="{$x}" y="470" font-size="12" fill="white" text-anchor="middle">
-                                <xsl:value-of select="position() - 1"/>
+                                <xsl:value-of select="@date"/>
                             </svg:text>
                         </xsl:for-each>
 
