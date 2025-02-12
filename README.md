@@ -16,7 +16,7 @@ Mithilfe der CRUD API kann der Benutzer Kraftwerke und Preise hinzufügen und be
 Um Daten hinzuzufügen, lädt der Benutzer eine XML Datei hoch, welche von der Applikation gegen ein XSD Schema geprüft wird. So wird sichergestellt, dass keine fehlerhaften Inputs möglich sind.
 
 #### Read
-Die Daten können auf der Plattform dynamisch angezeigt werden. Mithilfe einer XSLT-Transformation sind Filterungen oder Sortierungen nach Preis möglich.
+Die Daten können auf der Plattform dynamisch angezeigt werden. Mithilfe einer XSLT-Transformation sind Filterungen nach Status oder Sortierungen nach Preis möglich.
 
 #### Update / Delete
 Das Bearbeiten oder Löschen von Daten wurde bewusst nicht implementiert. Dadurch dass die Daten immutable sind wird eine maximale Transparenz der Energiepreise erzielt.
