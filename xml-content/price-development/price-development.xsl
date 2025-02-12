@@ -30,6 +30,25 @@
                         <xsl:call-template name="y-axis-labels"/>
                         <xsl:apply-templates select="document('../database/database.xml')/energie-data/energie-plant/plant" />
                     </svg:svg>
+
+                    <div class="legend">
+                    <xsl:for-each select="document('../database/database.xml')/energie-data/energie-plant/plant">
+                        <xsl:variable name="plantIndex" select="position() mod 5" />
+                        <xsl:variable name="color">
+                            <xsl:choose>
+                                <xsl:when test="$plantIndex = 0">red</xsl:when>
+                                <xsl:when test="$plantIndex = 1">blue</xsl:when>
+                                <xsl:when test="$plantIndex = 2">green</xsl:when>
+                                <xsl:when test="$plantIndex = 3">orange</xsl:when>
+                                <xsl:when test="$plantIndex = 4">purple</xsl:when>
+                            </xsl:choose>
+                        </xsl:variable>
+                        <div class="legend-item" style="color: {$color};">
+                            <span class="legend-color-box" style="background-color: {$color};"></span>
+                            <xsl:value-of select="name"/>
+                        </div>
+                    </xsl:for-each>
+                    </div>
                 </div>
 
             </body>
