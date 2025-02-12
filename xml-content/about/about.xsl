@@ -7,11 +7,11 @@
     <xsl:template match="about">
         <html>
             <head>
-                <title>Energiewerke Mittelland Reloaded</title>
+                <title>About</title>
                 <link rel="stylesheet" type="text/css" href="theme.css"/>
             </head>
             <body>
-                <h1>Energiewerke Mittelland Reloaded</h1>
+                <h1>Energiewerke Mittelland Reloaded - About</h1>
                 <small>
                     <a href="index.xml">Home</a>
                 </small>

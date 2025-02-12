@@ -5,7 +5,7 @@
     <xsl:template match="/">
         <html>
             <head>
-                <title>Sortierte Kraftwerke</title>
+                <title>Kraftwerke</title>
                 <link rel="stylesheet" type="text/css" href="../theme.css"/>
                 <style>
                     table {

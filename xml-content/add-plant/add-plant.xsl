@@ -7,11 +7,11 @@
     <xsl:template match="/">
         <html>
             <head>
-                <title>Neues Kraftwerk hinzufügen</title>
+                <title>Kraftwerk hinzufügen</title>
                 <link rel="stylesheet" type="text/css" href="../theme.css"/>
             </head>
             <body>
-                <h1>Neues Kraftwerk hinzufügen</h1>
+                <h1>Energiewerke Mittelland Reloaded - Kraftwerk hinzufügen</h1>
                 <small><a href="../index.xml">Home</a></small>
 
                 <br/><br/>

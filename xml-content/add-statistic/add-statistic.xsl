@@ -11,7 +11,7 @@
                 <link rel="stylesheet" type="text/css" href="../theme.css"/>
             </head>
             <body>
-                <h1>Statistik zu Kraftwerk hinzufügen</h1>
+                <h1>Energiewerke Mittelland Reloaded - Statistik hinzufügen</h1>
                 <small><a href="../index.xml">Home</a></small>
 
                 <br/><br/>
