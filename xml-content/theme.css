@@ -64,3 +64,12 @@ th {
     background-color: #2f4f4f;
     color: white;
 }
+
+svg text {
+    dominant-baseline: middle;
+}
+
+.y-axis-label {
+    text-anchor: end;
+    transform: translateX(-5px); /* Fügt etwas Abstand nach links hinzu */
+}
