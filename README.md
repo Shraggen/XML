@@ -22,12 +22,7 @@ Die Daten können auf der Plattform dynamisch angezeigt werden. Mithilfe einer X
 Das Bearbeiten oder Löschen von Daten wurde bewusst nicht implementiert. Dadurch dass die Daten immutable sind wird eine maximale Transparenz der Energiepreise erzielt.
 
 ### Feature 2 - Visualisierung
-Mögliche Optionen:
-- Liniendiagramm für Preisentwicklung über Zeit
-- Kreisdiagramm für Energietyp-Verteilung
-- Geografische Preisverteilung als Heatmap
-
-Umsetzung mit XSLT und SVG
+Die Applikation ermöglicht es dem Benutzer, die Preisdaten von Kraftwerken in Form eines Diagramms darzustellen. Das Diagramm zeigt auf der Y-Achse die Höhe des Energiepreises in CHF und auf der X-Achse das Datum der Erfassung. Jeder Graph innerhalb des Diagramms repräsentiert dabei ein Kraftwerk. Die Achsenbeschreibungen, die farbliche Differenzierung der Kraftwerke und die Legende machen das Diagramm übersichtlich und einfach zu verstehen.
 
 ## Technische Architektur
 ### Datenhaltung
@@ -46,8 +41,7 @@ Um die XML Daten zu visualisieren, wird ein SVG Diagramm generiert.
 Node.js und Express
 
 ## Verwendete Frameworks
-TODO
-CSS
+JavaScript, CSS
 
 ## Technische Stolpersteine
 TODO
@@ -58,6 +52,3 @@ TODO
 
 ## Fazit
 TODO
-
-## Links
-Google Drive (Präsentationen & Dokumentation) https://drive.google.com/drive/folders/1NxGOdgPpk6-I_cvQMEawxTL95Z5DnEBA
