@@ -48,7 +48,27 @@ TODO
 
 ## Rechtfertigung für jeden Einsatz von Nicht-XML Technologien
 ### Sortierung und Filtrierung von Plants
+Im Rahmen unseres Projekts haben wir uns bewusst dazu entschieden, **Nicht-XML-Technologien** – konkret JavaScript – für die dynamische Sortierung und Filterung der Kraftwerke („Plants“) einzusetzen. 
+Wir haben uns aus folgenden Begründungen für diesen Ansatz entschieden:
+
+1. **Interaktive Benutzeroberfläche und Asynchronität:**  
+   Die Anforderung sieht vor, dass der Benutzer die Liste der Kraftwerke in Echtzeit sortieren und filtern kann, ohne dass die gesamte Seite neu geladen werden muss. JavaScript in Verbindung mit AJAX ermöglicht es, asynchron Daten vom Server abzurufen und die Darstellung sofort anzupassen. Dies führt zu einer deutlich reaktionsfähigeren und benutzerfreundlicheren Oberfläche, als es mit rein statischen XML/XSLT-Lösungen möglich wäre.
+
+2. **Komplexitätsreduktion:**  
+   Zwar bieten XML-Technologien wie XSLT prinzipiell Möglichkeiten zur Transformation und sogar zu einfachen Filterungs- bzw. Sortieroperationen, jedoch ist deren Einsatz für dynamische und interaktive Funktionalitäten oftmals mit einer erhöhten Komplexität verbunden. Die Umsetzung einer vollständig dynamischen Filter- und Sortierlogik in XSLT (oder mittels XQuery) wäre umständlicher und weniger intuitiv, als wenn man diese Logik in JavaScript abbildet. Durch den Einsatz von JavaScript können wir die interaktive Funktionalität klar trennen und in einer Sprache umsetzen, die für solche clientseitigen Aufgaben gemacht ist.
+
+3. **Effizienz und Wartbarkeit:**  
+   Die Aufteilung der Verantwortlichkeiten – XML als reine Datenhaltung und Validierung, XSLT für die initiale Darstellung und JavaScript für die Interaktion – sorgt für eine klare Architektur. Das Resultat ist ein wartungsfreundlicher Code, in dem Änderungen an der Interaktionslogik (Sortierung, Filterung) ohne Anpassungen am XML- oder XSLT-Code vorgenommen werden können. Zudem kann durch clientseitige Sortierung und Filterung die Serverlast reduziert werden, da nicht für jeden Benutzerwechsel eine komplette Transformation auf Serverseite notwendig ist.
+
+4. **Auftragsanforderungen und praxisgerechte Umsetzung:**  
+   Gemäss dem Auftrag war vorgesehen, ein teilvollständiges CRUD-API zu entwickeln, das XML-Daten verwendet, aber dennoch interaktive und dynamische Features bieten soll. Die Nutzung von JavaScript zur Implementierung der Sortier- und Filterfunktionen entspricht genau dieser Anforderung: Es wird ein modernes Benutzererlebnis ermöglicht, während gleichzeitig die XML-basierte Datenhaltung und -validierung beibehalten wird. Diese Kombination erlaubt es, die Vorteile beider Welten – strukturierte, valide Daten im XML-Format und flexible, reaktive Interaktionen im Browser – optimal auszunutzen.
+
+**Zusammengefasst** lässt sich sagen:  
+Die Entscheidung, JavaScript für die Sortierung und Filterung der „Plants“ einzusetzen, basiert auf der Notwendigkeit, eine dynamische, reaktionsfähige Benutzeroberfläche zu schaffen, die mit asynchronen Datenabrufen und Echtzeit-Interaktionen überzeugen kann. Gleichzeitig bleibt der Kern der Datenhaltung und -validierung im XML-Bereich, sodass die prinzipielle Architektur des Systems – XML als Grundlage und JavaScript als Interaktionsschicht – klar getrennt und effizient realisiert wird.
 
 
 ## Fazit
 TODO
+
+## Links
+Google Drive (Präsentationen & Dokumentation) https://drive.google.com/drive/folders/1NxGOdgPpk6-I_cvQMEawxTL95Z5DnEBA
