@@ -44,7 +44,7 @@ Node.js und Express
 JavaScript, CSS
 
 ## Technische Stolpersteine
-TODO
+Ein technischer Stolperstein war, dass wir die Filter- und Sortierfunktionen nicht über XSLT umgesetzt haben. Da wir von Anfang an geplant hatten, diese Funktionalitäten über unser API mit JavaScript zu realisieren, stellte dies letztlich kein Problem dar.
 
 ## Rechtfertigung für jeden Einsatz von Nicht-XML Technologien
 ### Sortierung und Filtrierung von Plants
