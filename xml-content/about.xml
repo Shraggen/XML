@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <?xml-stylesheet type="text/xsl" href="about/about.xsl"?>
 <about>
-    <version>2.0</version>
-    <date>27.01.2025</date>
-    <author>benjamin.baeni@hslu.ch</author>
+    <version>6.9</version>
+    <date>12.02.2025</date>
+    <author>sven.baechler@stud.hslu.ch &amp; ilija.milovanovic@stud.hslu.ch</author>
 </about>

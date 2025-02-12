@@ -11,25 +11,21 @@
                 <link rel="stylesheet" type="text/css" href="theme.css"/>
             </head>
             <body>
-
                 <h1>Energiewerke Mittelland Reloaded</h1>
                 <small>
                     <a href="index.xml">Home</a>
                 </small>
-
                 <div class="content">
-
                     <p>
                         Version:
                         <xsl:value-of select="version"/>
                     </p>
                     <p>
-                        Date:
+                        Datum:
                         <xsl:value-of select="date"/>
                     </p>
-
                     <p>
-                        Author:
+                        Autoren:
                         <xsl:value-of select="author"/>
                     </p>
                 </div>
