@@ -44,7 +44,7 @@
                     row.innerHTML = "&lt;td&gt;" + id + "&lt;/td&gt;" +
                     "&lt;td&gt;" + name + "&lt;/td&gt;" +
                     "&lt;td&gt;" + price + " CHF&lt;/td&gt;" +
-                    "&lt;td&gt;" + (status === "true" ? "✅ Aktiv" : "❌ Inaktiv") + "&lt;/td&gt;";
+                    "&lt;td&gt;" + (status === "true" ? "Aktiv" : "Inaktiv") + "&lt;/td&gt;";
                     plantTable.appendChild(row);
                     }
                     }
