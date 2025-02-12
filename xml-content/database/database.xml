@@ -47,9 +47,9 @@
             <status>true</status>
             <statistics>
                 <price date="2021-01-15">10.25</price>
-                <price date="2022-01-17">9.75</price>
-                <price date="2022-03-20">11.50</price>
-                <price date="2022-11-09">13.00</price>
+                <price date="2022-01-17">12.75</price>
+                <price date="2022-03-20">6.50</price>
+                <price date="2022-11-09">18.00</price>
             </statistics>
         </plant>
         <plant>
@@ -57,10 +57,10 @@
             <name>Genf</name>
             <status>false</status>
             <statistics>
-                <price date="2021-01-15">10.25</price>
-                <price date="2022-01-17">9.75</price>
-                <price date="2022-03-20">11.50</price>
-                <price date="2022-11-09">13.00</price>
+                <price date="2021-01-15">13.25</price>
+                <price date="2022-01-17">8.75</price>
+                <price date="2022-03-20">15.50</price>
+                <price date="2022-11-09">11.00</price>
            </statistics>
         </plant>
     </energie-plant>
