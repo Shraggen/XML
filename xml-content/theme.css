@@ -47,3 +47,20 @@ button {
     margin-top: 10px;
     margin-left: 110px;
 }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid yellowgreen;
+}
+
+th, td {
+    border: 1px solid yellowgreen;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #2f4f4f;
+    color: white;
+}

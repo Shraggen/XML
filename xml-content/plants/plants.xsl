@@ -8,20 +8,6 @@
                 <title>Kraftwerke</title>
                 <link rel="stylesheet" type="text/css" href="../theme.css"/>
                 <style>
-                    table {
-                        width: 100%;
-                        border-collapse: collapse;
-                        border: 2px solid yellowgreen;
-                    }
-                    th, td {
-                        border: 1px solid yellowgreen;
-                        padding: 8px;
-                        text-align: left;
-                    }
-                    th {
-                        background-color: #2f4f4f;
-                        color: white;
-                    }
                 </style>
                 <script>
                     function fetchPlants() {
@@ -68,7 +54,7 @@
             </head>
             <body onload="fetchPlants()">
                 <h1>Energiewerke Mittelland Reloaded - Kraftwerke</h1>
-                <small><a href="../index.xml" style="color: yellowgreen;">Home</a></small>
+                <small><a href="../index.xml">Home</a></small>
 
                 <div class="content">
                     <label for="statusFilter">Status:</label>

@@ -11,7 +11,8 @@
             </head>
             <body>
                 <h1>Energiewerke Mittelland Reloaded - Preisentwicklung</h1>
-                <div class="content">
+                <small><a href="../index.xml">Home</a></small>
+                    <div class="content">
                     <svg:svg width="800" height="500">
                         <svg:line x1="50" y1="450" x2="750" y2="450" stroke="yellowgreen" stroke-width="2"/>
                         <svg:line x1="50" y1="50" x2="50" y2="450" stroke="yellowgreen" stroke-width="2"/>
