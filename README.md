@@ -52,8 +52,9 @@ CSS
 ## Technische Stolpersteine
 TODO
 
-## Rechtfertigung für jeden (!) Einsatz von Nicht-XML Technologien
-TODO (am beste direkt alles mit XML mache denn hemmer nüt zum rechtfertige)
+## Rechtfertigung für jeden Einsatz von Nicht-XML Technologien
+### Sortierung und Filtrierung von Plants
+
 
 ## Fazit
 TODO
