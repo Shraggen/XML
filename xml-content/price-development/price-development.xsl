@@ -6,7 +6,7 @@
     <xsl:template match="feature">
         <html>
             <head>
-                <title>Energiewerke Mittelland - Diagramm</title>
+                <title>Energiewerke Mittelland Reloaded - Diagramm</title>
                 <link rel="stylesheet" type="text/css" href="theme.css"/>
             </head>
             <body>
@@ -16,8 +16,8 @@
                         <svg:line x1="50" y1="450" x2="750" y2="450" stroke="yellowgreen" stroke-width="2"/>
                         <svg:line x1="50" y1="50" x2="50" y2="450" stroke="yellowgreen" stroke-width="2"/>
 
-                        <svg:text x="380" y="490" font-size="16" fill="white">Preiserfassung</svg:text>
-                        <svg:text x="10" y="250" font-size="16" fill="white" transform="rotate(-90,10,250)">Preis</svg:text>
+                        <svg:text x="380" y="490" font-size="16" fill="white">Preisentwicklung</svg:text>
+                        <svg:text x="10" y="250" font-size="16" fill="white" transform="rotate(-90,10,250)">CHF</svg:text>
 
                         <xsl:for-each select="document('../database/database.xml')/energie-data/energie-plant/plant[1]/statistics/price">
                             <xsl:variable name="x" select="50 + ((position() - 1) * 70)" />

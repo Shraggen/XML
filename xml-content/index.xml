@@ -7,23 +7,23 @@
         <index>0</index>
     </item>
     <item>
-        <text>Read Kraftwerke</text>
-        <link>feature-05.xml</link>
+        <text>Kraftwerke</text>
+        <link>plants.xml</link>
         <index>1</index>
     </item>
     <item>
-        <text>Diagram</text>
-        <link>feature-06.xml</link>
+        <text>Preisentwicklung</text>
+        <link>price-development.xml</link>
         <index>2</index>
     </item>
     <item>
-        <text>Create Kraftwerk</text>
-        <link>feature-07.xml</link>
+        <text>Kraftwerk hinzufügen</text>
+        <link>add-plant.xml</link>
         <index>3</index>
     </item>
     <item>
-        <text>Add Statistic</text>
-        <link>feature-08.xml</link>
+        <text>Statistik hinzufügen</text>
+        <link>add-statistic.xml</link>
         <index>4</index>
     </item>
     <item>
