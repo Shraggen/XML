@@ -66,9 +66,14 @@ Wir haben uns aus folgenden Begründungen für diesen Ansatz entschieden:
 **Zusammengefasst** lässt sich sagen:  
 Die Entscheidung, JavaScript für die Sortierung und Filterung der „Plants“ einzusetzen, basiert auf der Notwendigkeit, eine dynamische, reaktionsfähige Benutzeroberfläche zu schaffen, die mit asynchronen Datenabrufen und Echtzeit-Interaktionen überzeugen kann. Gleichzeitig bleibt der Kern der Datenhaltung und -validierung im XML-Bereich, sodass die prinzipielle Architektur des Systems – XML als Grundlage und JavaScript als Interaktionsschicht – klar getrennt und effizient realisiert wird.
 
-
 ## Fazit
-TODO
+Die entwickelte Plattform ist eine einfache und günstige Lösung, um Energiepreise während der aktuellen Krise zu erfassen, anzuzeigen und zu überwachen. Mit XML als Datenformat können die Daten sauber und einheitlich gespeichert werden. Dank der Prüfung mit XSD wird sichergestellt, dass keine fehlerhaften Daten hochgeladen werden.
+
+Die Entscheidung, JavaScript für die Sortier- und Filterfunktionen zu verwenden, hat sich als sinnvoll erwiesen. So können Nutzer die Daten schnell und unkompliziert anpassen, ohne die Seite neu laden zu müssen. Das macht die Plattform benutzerfreundlich und reaktionsschnell. Die Preisdaten werden übersichtlich in einem Diagramm dargestellt, sodass Preisänderungen leicht erkennbar sind.
+
+Auch wenn es kleinere Herausforderungen bei der Umsetzung gab, konnte eine funktionale Lösung bereitgestellt werden. Die klare Trennung zwischen Datenhaltung (XML), Prüfung (XSD), Anzeige (XSLT) und Bedienung (JavaScript) macht das System übersichtlich und leicht erweiterbar.
+
+Insgesamt erfüllt die Plattform die Anforderungen und bietet sowohl Energieunternehmen als auch Verbrauchern einen hilfreichen Überblick über die Energiepreise.
 
 ## Links
 Google Drive (Präsentationen & Dokumentation) https://drive.google.com/drive/folders/1NxGOdgPpk6-I_cvQMEawxTL95Z5DnEBA
