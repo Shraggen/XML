@@ -55,7 +55,6 @@
             <body onload="fetchPlants()">
                 <h1>Energiewerke Mittelland Reloaded - Kraftwerke</h1>
                 <small><a href="../index.xml">Home</a></small>
-
                 <div class="content">
                     <label for="statusFilter">Status:</label>
                     <select id="statusFilter" onchange="fetchPlants()">
@@ -89,7 +88,6 @@
                             </tr>
                         </thead>
                         <tbody id="plantTable">
-                            <!-- API Data will be inserted here -->
                         </tbody>
                     </table>
                 </div>

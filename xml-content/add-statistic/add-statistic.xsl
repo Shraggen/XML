@@ -13,7 +13,6 @@
             <body>
                 <h1>Energiewerke Mittelland Reloaded - Statistik hinzufügen</h1>
                 <small><a href="../index.xml">Home</a></small>
-                
                 <div class="content">
                     <form action="/plants/statistics" method="post">
                         <label for="plant">Kraftwerk wählen:</label>
@@ -43,7 +42,6 @@
         </html>
     </xsl:template>
 
-    <!-- Drop-down für bestehende Kraftwerke -->
     <xsl:template match="plant">
         <option value="{id}">
             <xsl:value-of select="name"/>

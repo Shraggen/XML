@@ -13,8 +13,6 @@
             <body>
                 <h1>Energiewerke Mittelland Reloaded - Kraftwerk hinzufügen</h1>
                 <small><a href="../index.xml">Home</a></small>
-                <br/><br/>
-
                 <div class="content">
                     <form action="/plants" method="post">
                         <label for="name">Kraftwerksname:</label>

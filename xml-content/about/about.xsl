@@ -8,13 +8,11 @@
         <html>
             <head>
                 <title>About</title>
-                <link rel="stylesheet" type="text/css" href="theme.css"/>
+                <link rel="stylesheet" type="text/css" href="../theme.css"/>
             </head>
             <body>
                 <h1>Energiewerke Mittelland Reloaded - About</h1>
-                <small>
-                    <a href="index.xml">Home</a>
-                </small>
+                <small><a href="../index.xml">Home</a></small>
                 <div class="content">
                     <p>
                         Version:

@@ -1,5 +1,4 @@
 body {
-
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -8,12 +7,10 @@ body {
     font-size: 14px;
     line-height: 1.42857143;
     overflow: auto;
-
     margin: 0;
     padding: 25px;
     background-color: #445d6e;
     color: #8f9ea8;
-
 }
 
 a {
@@ -71,7 +68,7 @@ svg text {
 
 .y-axis-label {
     text-anchor: end;
-    transform: translateX(-5px); /* Fügt etwas Abstand nach links hinzu */
+    transform: translateX(-5px);
 }
 
 .container {

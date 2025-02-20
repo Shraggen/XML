@@ -8,20 +8,12 @@
         <html>
             <head>
                 <title>Energiewerke Mittelland</title>
-                <link rel="stylesheet" type="text/css" href="theme.css"/>
+                <link rel="stylesheet" type="text/css" href="../theme.css"/>
             </head>
             <body>
-
-                <!-- title and nav  -->
                 <h1>Energiewerke Mittelland Reloaded</h1>
-
                 <div class="content">
-
-                    <p>
-                        <i>Welcome...</i>
-                    </p>
-
-                    <!-- render menu nav  -->
+                    <p><i>Welcome...</i></p>
                     <ul>
                         <xsl:apply-templates select="item">
                             <xsl:sort select="index" data-type="text" order="ascending"/>
@@ -29,8 +21,8 @@
                     </ul>
                     <hr></hr>
                     <a
-                            href="database/database.xml"
-                            target="_blank"
+                        href="database/database.xml"
+                        target="_blank"
                     >
                         show Database
                     </a>
@@ -40,7 +32,6 @@
         </html>
     </xsl:template>
 
-    <!-- single menu item  -->
     <xsl:template match="item">
         <li>
             <a>

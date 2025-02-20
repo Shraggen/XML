@@ -7,7 +7,7 @@
         <html>
             <head>
                 <title>Preisentwicklung</title>
-                <link rel="stylesheet" type="text/css" href="theme.css"/>
+                <link rel="stylesheet" type="text/css" href="../theme.css"/>
             </head>
             <body>
                 <h1>Energiewerke Mittelland Reloaded - Preisentwicklung</h1>
