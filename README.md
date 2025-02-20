@@ -74,6 +74,3 @@ Die Entscheidung, JavaScript für die Sortier- und Filterfunktionen zu verwenden
 Auch wenn es kleinere Herausforderungen bei der Umsetzung gab, konnte eine funktionale Lösung bereitgestellt werden. Die klare Trennung zwischen Datenhaltung (XML), Prüfung (XSD), Anzeige (XSLT) und Bedienung (JavaScript) macht das System übersichtlich und leicht erweiterbar.
 
 Insgesamt erfüllt die Plattform die Anforderungen und bietet sowohl Energieunternehmen als auch Verbrauchern einen hilfreichen Überblick über die Energiepreise.
-
-## Links
-Google Drive (Präsentationen & Dokumentation) https://drive.google.com/drive/folders/1NxGOdgPpk6-I_cvQMEawxTL95Z5DnEBA
